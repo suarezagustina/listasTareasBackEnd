@@ -49,6 +49,10 @@ npm install sweetalert2
 ```
 npm install react-hook-form
 ```
+## Comando para instalar Icons de BootsTrap 🔔✔️​
+```
+npm i bootstrap-icons
+```
 ## Comando para instalar JsonServer como devDependencies 👾✔️​
 ```
 npm install json-server --save-dev

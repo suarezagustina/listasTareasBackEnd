@@ -1,0 +1,13 @@
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.mainPage{
+    flex-grow: 1;
+}
+#banner{
+    height: 490px;
+    width: 100%;
+    object-fit: cover;
+}
