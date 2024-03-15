@@ -1,5 +1,6 @@
 import { Container, Table } from "react-bootstrap";
 import ItemTarea from "./Tarea/ItemTarea";
+import "../../src/helpers/queries"
 
 const TareasLista = () => {
     return (
