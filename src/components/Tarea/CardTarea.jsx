@@ -1,4 +1,4 @@
-import { Col } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
 const CardTarea = () => {
@@ -12,6 +12,14 @@ const CardTarea = () => {
         <Card.Text>
           Facet
         </Card.Text>
+        <div className="text-center">
+        <Button variant="warning" className="me-lg-2  btn btn-dark">
+          <i className="bi bi-pencil-square"></i>
+        </Button>
+        <Button variant="mt-1 ms-3 bg-danger border-danger">
+          <i className="bi bi-trash text-white"></i>
+        </Button>
+      </div>
       </Card.Body>
     </Card>
     </Col>

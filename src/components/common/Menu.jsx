@@ -1,21 +1,19 @@
 import {Navbar, Container, Nav} from 'react-bootstrap'
+import { Link, NavLink } from 'react-router-dom';
 
 const Menu = () => {
     return (
         <>
- <Navbar expand="lg" className="navbar bg-dark border-body">
- <Container>
-   <Navbar.Brand href="#home" className='text-white'>Lista de Tareas</Navbar.Brand>
-   <Navbar.Toggle aria-controls="basic-navbar-nav" />
-   <Navbar.Collapse id="basic-navbar-nav">
-     <Nav className="ms-auto">
-       <Nav.Link href="#home" className='text-white'>Inicio</Nav.Link>
-       <Nav.Link href="#link" className='text-white'>Tareas</Nav.Link>
-       <Nav.Link href="#link" className='text-white'>Añadir</Nav.Link>
-       <Nav.Link href="#link" className='text-white'>Ver/Editar/Borrar</Nav.Link>
-     </Nav>
-   </Navbar.Collapse>
- </Container>
+<Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand as={Link} to='/'>Lista de Tareas</Navbar.Brand>
+          <Nav className="ms-auto">
+            <NavLink end className="nav-link" to="/">Inicio</NavLink>
+            <NavLink end className="nav-link" to="/vertareas">Tareas</NavLink>
+            <NavLink end className="nav-link" to="/creartarea">Añadir</NavLink>
+            <NavLink end className="nav-link" to="/modificartarea">Ver/Editar/Borrar</NavLink>
+          </Nav>
+        </Container>
 </Navbar>
 </>
     );
