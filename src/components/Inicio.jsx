@@ -1,8 +1,24 @@
 import { Container, Row } from "react-bootstrap";
 import banner from "../../src/assets/bannerTareas.jpg"
 import CardTarea from "./Tarea/CardTarea";
+import { useEffect, useState } from "react";
+import { leerTareasAPI } from "../helpers/queries";
 
 const Inicio = () => {
+    const [tareas, setTareas] = useState ([]);
+
+    useEffect(()=>{
+      traerTarea();
+     },[])
+  
+     const traerTarea = async()=>{
+      try {
+       const listaTareasAPI = await leerTareasAPI()
+       setTareas(listaTareasAPI);
+      } catch (error) {
+       console.log(error)
+      }
+     }
     return (
         <>
      <img src={banner} alt="Banner de tareas" id="banner"/>
@@ -11,12 +27,9 @@ const Inicio = () => {
     <h1 className='my-4 display-3 text-white'>Tareas</h1>
     </div>
     <Row>
-    <CardTarea></CardTarea>
-    <CardTarea></CardTarea>
-    <CardTarea></CardTarea>
-    <CardTarea></CardTarea>
-    <CardTarea></CardTarea>
-    <CardTarea></CardTarea>
+    {
+            tareas.map((tarea)=><CardTarea key={tarea.id} tarea={tarea}></CardTarea>)
+          }
     </Row>
     </Container>
         </>

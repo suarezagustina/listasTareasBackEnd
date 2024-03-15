@@ -12,3 +12,11 @@
     width: 100%;
     object-fit: cover;
 }
+.cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card{
+    flex: 1;
+}

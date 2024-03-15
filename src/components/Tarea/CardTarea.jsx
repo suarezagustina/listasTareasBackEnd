@@ -1,26 +1,26 @@
 import { Col, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-const CardTarea = () => {
+const CardTarea = ({tarea}) => {
     return (
         <>
-        <Col md={4} lg={3} className="mb-3">
+        <Col md={4} lg={3} className="mb-3 cards">
      <Card>
-      <Card.Body>
-        <Card.Title>Hacer tarea de Computacion</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Ejercicios 1 a 10</Card.Subtitle>
+      <Card.Body className='card'>
+        <Card.Title>{tarea.nombreTarea}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{tarea.subtituloTarea}</Card.Subtitle>
         <Card.Text>
-          Facet
+        {tarea.descripcionTarea}
         </Card.Text>
-        <div className="text-center">
-        <Button variant="warning" className="me-lg-2  btn btn-dark">
+      </Card.Body>
+      <div className="text-center mb-0 my-2">
+        <Button variant="warning" className="mb-2 me-lg-2 btn btn-dark">
           <i className="bi bi-pencil-square"></i>
         </Button>
         <Button variant="mt-1 ms-3 bg-danger border-danger">
           <i className="bi bi-trash text-white"></i>
         </Button>
       </div>
-      </Card.Body>
     </Card>
     </Col>
         </>
