@@ -1,8 +1,24 @@
 import { Container, Table } from "react-bootstrap";
 import ItemTarea from "./Tarea/ItemTarea";
-import "../../src/helpers/queries"
+import { useEffect, useState } from "react";
+import { leerTareasAPI } from "../helpers/queries";
 
 const TareasLista = () => {
+  const [tareas, setTareas] = useState ([]);
+
+  useEffect(()=>{
+    traerTarea();
+   },[])
+
+   const traerTarea = async()=>{
+    try {
+     const listaTareasAPI = await leerTareasAPI()
+     setTareas(listaTareasAPI);
+    } catch (error) {
+     console.log(error)
+    }
+   }
+
     return (
         <>
         <Container className="mainPage p-3">
@@ -18,7 +34,9 @@ const TareasLista = () => {
         </tr>
       </thead>
       <tbody>
-      <ItemTarea></ItemTarea>
+      {
+            tareas.map((tarea)=><ItemTarea key={tarea.id} tarea={tarea}></ItemTarea>)
+          }
       </tbody>
     </Table>
     </section>
