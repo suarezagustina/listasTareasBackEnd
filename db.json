@@ -1,0 +1,22 @@
+{
+    "tarea":[
+        {
+            "nombreTarea":"Hacer Tareas de Laboratorio",
+            "subtituloTarea":"Ejercicio 1 a 10",
+            "descripcionTarea":"Facultad",
+            "id":"1"
+        },
+        {
+            "nombreTarea":"Lavar la ropa",
+            "subtituloTarea":"A las 00:00",
+            "descripcionTarea":"En modo ECO, lavar la ropa y poner una taza y media de jabon",
+            "id":"2"
+        },
+        {
+            "nombreTarea":"Enseñar y ayudar a Guada",
+            "subtituloTarea":"Tarea de Biologia",
+            "descripcionTarea":"Hacer afiche del punto 2",
+            "id":"3"
+        }
+    ]
+}
