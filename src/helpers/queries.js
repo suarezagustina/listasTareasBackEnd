@@ -29,3 +29,15 @@ export const crearTareaAPI = async(nuevatarea)=>{
      console.log(error)
    }
   }
+
+  export const borrarTareaAPI = async(id)=>{
+   try {
+     const respuesta = await fetch(`${URI_TAREAS}/${id}`, {
+        method: "DELETE",
+     })
+     console.log(respuesta);
+     return respuesta
+   } catch (error) {
+     console.log(error)
+   }
+  }
