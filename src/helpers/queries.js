@@ -41,3 +41,32 @@ export const crearTareaAPI = async(nuevatarea)=>{
      console.log(error)
    }
   }
+
+  export const editarTareaAPI = async(id, tarea) => {
+   try {
+      const respuesta = await fetch(`${URI_TAREAS}/${id}`, {
+         method: "PUT",
+         headers: {
+            "Content-Type":"application/json"
+         },
+      body: JSON.stringify(tarea)
+   })
+      console.log(respuesta);
+      return respuesta;
+   } catch (error) {
+      console.log(error)
+   }
+   }
+
+   
+  export const obtenerTareaAPI = async(id)=>{
+   try {
+      const respuesta = await fetch(`${URI_TAREAS}/${id}`);
+     // console.log(respuesta);
+     // const productoBuscado = await respuesta.json()
+     console.log(respuesta);
+      return respuesta;
+   } catch (error) {
+      console.log(error)
+   }
+}

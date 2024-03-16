@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import { borrarTareaAPI, leerTareasAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ItemTarea = ({tarea, setTareas}) => {
 
@@ -44,9 +45,9 @@ const ItemTarea = ({tarea, setTareas}) => {
           <td>{tarea.subtituloTarea}</td>
           <td>{tarea.descripcionTarea}</td>
           <td className="text-center">
-        <Button variant="warning" className="me-lg-2  btn btn-dark">
+          <Link variant="warning" className="me-lg-2 btn btn-dark mt-1" to={`/tarea/editar/${tarea.id}`}>
           <i className="bi bi-pencil-square"></i>
-        </Button>
+         </Link>
         <Button variant="mt-1 ms-3 bg-danger border-danger" onClick={borrarTarea}>
           <i className="bi bi-trash text-white"></i>
         </Button>

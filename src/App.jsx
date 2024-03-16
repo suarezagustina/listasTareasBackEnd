@@ -20,6 +20,8 @@ function App() {
         <Route exact path="/vertareas" element={<Tareas></Tareas>}></Route>
         <Route exact path="/creartarea" element={<FormularioTareas></FormularioTareas>}></Route>
         <Route exact path="/modificartarea" element={<TareasLista></TareasLista>}></Route>
+        <Route exact path="/tarea/crear" element={<FormularioTareas editar={false} titulo="Nueva Tarea"></FormularioTareas>}></Route>
+        <Route exact path="/tarea/editar/:id" element={<FormularioTareas editar={true} titulo="Editar Tarea"></FormularioTareas>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
     </Routes>
     <Footer></Footer>

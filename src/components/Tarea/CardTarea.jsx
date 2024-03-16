@@ -1,7 +1,9 @@
 import { Col, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 
 const CardTarea = ({tarea}) => {
+
     return (
         <>
         <Col md={4} lg={3} className="mb-3 cards">
@@ -14,12 +16,9 @@ const CardTarea = ({tarea}) => {
         </Card.Text>
       </Card.Body>
       <div className="text-center mb-0 my-2">
-        <Button variant="warning" className="mb-2 me-lg-2 btn btn-dark">
+      <Link variant="warning" className="me-lg-2 btn btn-dark mt-1 mb-2" to={`/tarea/editar/${tarea.id}`}>
           <i className="bi bi-pencil-square"></i>
-        </Button>
-        <Button variant="mt-1 ms-3 bg-danger border-danger">
-          <i className="bi bi-trash text-white"></i>
-        </Button>
+         </Link>
       </div>
     </Card>
     </Col>
