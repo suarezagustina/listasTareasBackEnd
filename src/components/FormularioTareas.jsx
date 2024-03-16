@@ -1,54 +1,35 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-//import Swal from "sweetalert2";
+import { crearTareaAPI } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const FormularioTareas = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
-  const tareaForm = async(producto) => {
-    if(editar){
-      //agregar logica de editar con la api
-      const respuesta = await editarProductoAPI(id, producto)
-      if(respuesta.status === 200){
-        Swal.fire({
-          title: "Producto editado!",
-          text:  `El producto: ${producto.nombreDelProducto} fue editado correctamente `,
-          icon: "success"
-        });
-        //redireccionar
-        navegacion("/administrador");
-      }else{
-        Swal.fire({
-          title: "Ocurrio un error",
-          text: "Intente editar este producto en unos minutos",
-          icon: "error"
-        });
-      }
-    }else{
-   // console.log(producto);
-    const respuesta = await crearProductoAPI(producto);
+  const tareaForm = async(tarea) => {
+    const respuesta = await crearTareaAPI(tarea);
     if(respuesta.status === 201){
       //mensaje
       Swal.fire({
-        title: "Producto creado!",
-        text:  `El producto: ${producto.nombreDelProducto} fue creado correctamente `,
+        title: "Tarea creada!",
+        text:  `La Tarea: ${tarea.nombreTarea} fue creada correctamente `,
         icon: "success"
       });
-    //  console.log("producto creado")
+    //  console.log("tarea creada")
     reset();
     }else{
       Swal.fire({
         title: "Ocurrio un error",
-        text: "Intente crear este producto en unos minutos",
+        text: "Intente crear esta tarea en unos minutos",
         icon: "error"
       });
     }
   };
-}
 
   return (
     <Container className="mainPage">
